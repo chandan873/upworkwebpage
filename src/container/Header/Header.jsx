@@ -22,52 +22,35 @@ const scaleVariants = {
 
 const Header = () => (
   <div className="app__header app__flex">
-    <motion.div
-      whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-      transition={{ duration: 0.5 }}
-      className="app__header-info"
-    >
-      <div className="app__header-badge">
-        <div className="badge-cmp app__flex">
-          <span>👋</span>
-          <div style={{ marginLeft: 20 }}>
-            <p className="p-text">Hello, Welcome to</p>
-            <h1 className="head-text">INVENTIVE NEXUS</h1>
-          </div>
-        </div>
 
-        <div className="tag-cmp app__flex">
-     
-          
-        </div>
+<div className="header_leftsec px-5">
+      <h1 className='text-5xl font-extrabold pb-5'>
+        Building digital <br />
+       span products & brands.
+      </h1>
+      <p className='mb-5'> 
+        This free and open-source landing page template was built using the
+        utility classes from Tailwind CSS and based on the components from the
+        Flowbite Library and the Blocks System.
+      </p>
+      <div className="header_button">
+      <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Purple to Blue</button>
+      <button type="button" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Teal to Lime</button>
       </div>
-    </motion.div>
+    </div>
 
-    <motion.div
-      whileInView={{ opacity: [0, 1] }}
-      transition={{ duration: 0.5, delayChildren: 0.5 }}
-      className="app__header-img"
-    >
-      <img src={images.profile} alt="profile_bg" />
-      <motion.img
-        whileInView={{ scale: [0, 1] }}
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        src={images.circle}
-        alt="profile_circle"
-        className="overlay_circle"
-      />
-    </motion.div>
+
 
     <motion.div
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView}
-      className="app__header-circles"
+      className=""
     >
-      {[images.flutter, images.redux, images.sass].map((circle, index) => (
-        <div className="circle-cmp app__flex" key={`circle-${index}`}>
-          <img src={circle} alt="profile_bg" />
+      
+        <div className=" app__flex" >
+          <img src="https://demo.themesberg.com/landwind/images/hero.png" alt="profile_bg" />
         </div>
-      ))}
+   
     </motion.div>
   </div>
 );

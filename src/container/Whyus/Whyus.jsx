@@ -51,9 +51,16 @@ const Header = () => (
   <div className="app__header app__flex whyus">
     <h1 className='head-text' >Why Choose <span>INVENTIVE NEXUS</span></h1>
     <div className='card_main'>
+
       <div className='card_main_left '>
-        <h3 className='' >Crafting Digital Products</h3>
-        <div className='grid-container'>
+        <h3 className='font-bold' >Crafting Digital Products</h3>
+        <motion.div
+      variants={scaleVariants}
+      whileInView={scaleVariants.whileInView}
+      className=""
+    >
+      
+   <div className='grid-container'>
         {card.map((e)=>{
        return (
        <div className='card_box'>
@@ -63,10 +70,21 @@ const Header = () => (
      );})}
           
         </div>
+    </motion.div>
+        
       </div>
       <div className='card_main_right'>
-        <h3>Advocating Agile Methods</h3>
-        <img src="https://www.walkweltech.com/assets/images/process-image.png" alt="" />
+        <h3 className='font-bold'>Advocating Agile Methods</h3>
+        <motion.div
+      variants={scaleVariants}
+      whileInView={scaleVariants.whileInView}
+      className=""
+    >
+      
+       <img src="https://www.walkweltech.com/assets/images/process-image.png" alt="" />
+   
+    </motion.div>
+      
       </div>
     </div>
   </div>

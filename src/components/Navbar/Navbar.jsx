@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import {Link} from 'react-router-dom';
 
-import { images } from '../../constant';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -12,15 +12,17 @@ const Navbar = () => {
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         {/* <img src={images.logos} alt="logo" /> */}
-        <h3>INVENTIVE NEXUS</h3>
+    <a href="/"><h3 className='cursor-pointer'>INVENTIVE NEXUS</h3></a>    
       </div>
       <ul className="app__navbar-links">
-        {['home', 'why us','services ', 'portfolio','blog', 'contact us'].map((item) => (
+        {['home', 'why us','services ', 'portfolio', 'contact us'].map((item) => (
           <li className="app__flex p-text" key={`link-${item}`}>
             
             <a href={`#${item}`}>{item}</a>
           </li>
         ))}
+    
+    <li><a href="/blog">Blog</a></li> 
       </ul>
 
       <div className="app__navbar-menu">
@@ -33,14 +35,18 @@ const Navbar = () => {
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
-              {['home', 'services ', 'portfolio', 'why us', 'contact us','blog'].map((item) => (
-                <li key={item}>
+              {['home', 'services ', 'portfolio', 'why us', 'contact us',].map((item) => (
+           <li key={item}>
                   <a href={`#${item}`} onClick={() => setToggle(false)}>
                     {item}
                   </a>
+                  
                 </li>
+            
               ))}
+ <li className="app__flex p-text"> <Link to="/blog"><a href="" >Blog</a></Link> </li>  
             </ul>
+             
           </motion.div>
         )}
       </div>
