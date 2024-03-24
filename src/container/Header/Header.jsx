@@ -24,7 +24,7 @@ const Header = () => (
   <div className="app__header app__flex">
 
 <div className="header_leftsec px-5">
-      <h1 className='text-5xl font-extrabold pb-5'>
+      <h1 className='text-5xl font-extrabold pb-5 head-text text-left'>
         Building digital <br />
        span products & brands.
       </h1>
