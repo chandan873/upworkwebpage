@@ -34,7 +34,7 @@ const Mainfooter = () => {
             </a>
         </div>
 
-        <p class="mt-6 text-sm text-gray-500 lg:mt-0 dark:text-gray-400">© Copyright 2023 Meraki UI. </p>
+        {/* <p class="mt-6 text-sm text-gray-500 lg:mt-0 dark:text-gray-400">© Copyright 2023 Meraki UI. </p> */}
     </div>
 </footer>
 

@@ -35,8 +35,12 @@ import nb from '../assets/nb.png';
 import skype from '../assets/skype.png';
 import spotify from '../assets/spotify.png';
 import logos from '../assets/logo-1.png'
+import filmore from '../assets/filmore.png'
+import trumath from '../assets/trumath.png'
 
 export default {
+  filmore,
+  trumath,
   email,
   mobile,
   api,
