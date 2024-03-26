@@ -12,7 +12,7 @@ const Work = () => {
 
       <div className="portfolio min-h-screen w-full mt-10">
         {/* card 1 */}
-        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-orange-600 to-white">
+        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-orange-500 to-white">
           <div className="portfolio_card_content md:w-1/2 order-2 md:order-1">
             <h1 className="text-4xl uppercase font-bold text-white dark:text-white mb-4 md:mb-6">
               TRUMATH

@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
           <div>
             <textarea
-              className="p-text"
+              className="p-text p-3"
               placeholder="Your Message"
               value={message}
               name="message"
