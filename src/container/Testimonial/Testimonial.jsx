@@ -7,32 +7,12 @@ import { urlFor, client } from '../../client';
 import './Testimonial.css';
 
 const Testimonial = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [testimonials, setTestimonials] = useState([]);
-  const [brands, setBrands] = useState([]);
 
-  const handleClick = (index) => {
-    setCurrentIndex(index);
-  };
-
-  useEffect(() => {
-    const query = '*[_type == "testimonials"]';
-    const brandsQuery = '*[_type == "brands"]';
-
-    client.fetch(query).then((data) => {
-      setTestimonials(data);
-    });
-
-    client.fetch(brandsQuery).then((data) => {
-      setBrands(data);
-    });
-  }, []);
-
+ 
   return (
-    <>
-      {testimonials.length && (
-        <>
-        <h1 className='head-text mb-20' >About us</h1>
+ <>
+  
+        <h1 id='about' className='head-text mb-20' >About us</h1>
           <div className="app__testimonial-item app__flex">
             {/* <img src="" alt="" /> */}
             <div className="app__testimonial-content">
@@ -54,40 +34,22 @@ Our vision at Inventive Nexus is to be a catalyst for digital transformation, em
 <b>Our Mission</b>
 <br></br>
 Our mission is to provide unparalleled software solution services that enable our clients to achieve their goals with confidence and clarity. We're committed to delivering exceptional value through innovative thinking, expert craftsmanship, and unwavering dedication to client success.
-                {/* <h5 className="p-text">{testimonials[currentIndex].company}</h5> */}
+                
               </div>
             </div>
           </div>
 
-          {/* <div className="app__testimonial-btns app__flex">
-            <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
-              <HiChevronLeft />
-            </div>
+ </>
 
-            <div className="app__flex" onClick={() => handleClick(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)}>
-              <HiChevronRight />
-            </div>
-          </div> */}
-        </>
-      )}
 
-      {/* <div className="app__testimonial-brands app__flex">
-        {brands.map((brand) => (
-          <motion.div
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5, type: 'tween' }}
-            key={brand._id}
-          >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
-          </motion.div>
-        ))}
-      </div> */}
-    </>
+          
+   
+   
   );
 };
 
 export default AppWrap(
   MotionWrap(Testimonial, 'app__testimonial'),
-  'testimonial',
+  'about',
   'app__primarybg',
 );
