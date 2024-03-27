@@ -25,13 +25,10 @@ const Header = () => (
 
 <div className="header_leftsec px-5">
       <h1 className='text-5xl font-extrabold pb-5 head-text text-left'>
-        Building digital <br />
-       span products & brands.
+      Welcome to Inventive Nexus<br />
       </h1>
       <p className='mb-5'> 
-        This free and open-source landing page template was built using the
-        utility classes from Tailwind CSS and based on the components from the
-        Flowbite Library and the Blocks System.
+      where technology meets tailored solutions to redefine your digital landscape.
       </p>
       <div className="header_button">
       <button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Purple to Blue</button>
