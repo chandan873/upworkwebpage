@@ -1,78 +1,79 @@
 import React, { useState, useEffect } from 'react';
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
-import { motion } from 'framer-motion';
 
-import { AppWrap, MotionWrap } from '../../Wrapper';
-import { urlFor, client } from '../../client';
-import './Testimonial.css';
-
-const Testimonial = () => {
+const App = () => {
+  const [reviews, setReviews] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [testimonials, setTestimonials] = useState([]);
-  const [brands, setBrands] = useState([]);
-
-  const handleClick = (index) => {
-    setCurrentIndex(index);
-  };
 
   useEffect(() => {
-    const query = '*[_type == "testimonials"]';
-    const brandsQuery = '*[_type == "brands"]';
+    const fetchRandomUser = async () => {
+      try {
+        const userResponse = await fetch('https://randomuser.me/api/?results=5&nat=us');
+        const userData = await userResponse.json();
+        const users = userData.results.map(result => ({
+          clientName: `${result.name.first} ${result.name.last}`,
+          avatar: result.picture.large
+        }));
 
-    client.fetch(query).then((data) => {
-      setTestimonials(data);
-    });
+        const reviewResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const reviewData = await reviewResponse.json();
+        const randomReviews = reviewData
+          .filter(review => review.userId % 2 === 0) // Filter reviews by even user IDs to ensure English reviews
+          .map(review => ({
+            content: review.body,
+            rating: Math.max(Math.floor(Math.random() * 2) + 4, 4) // Generate random rating between 4 and 5
+          }));
 
-    client.fetch(brandsQuery).then((data) => {
-      setBrands(data);
-    });
-  }, []);
+        // Shuffle randomReviews array to mix random reviews
+        randomReviews.sort(() => Math.random() - 0.5);
+
+        // Merge user data with random reviews
+        const mergedData = users.map((user, index) => ({
+          ...user,
+          ...randomReviews[index]
+        }));
+
+        setReviews(mergedData);
+      } catch (error) {
+        console.error('Error fetching random data:', error);
+      }
+    };
+
+    fetchRandomUser();
+
+    const intervalId = setInterval(() => {
+      setCurrentIndex(prevIndex => (prevIndex + 1) % reviews.length);
+    }, 5000); // Change slide every 5 seconds (adjust as needed)
+    
+    return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+  }, [reviews.length]);
 
   return (
-    <>
-      {testimonials.length && (
-        <>
-        <h1 className='head-text mb-20' >Why Choose <span>INVENTIVE NEXUS</span></h1>
-          <div className="app__testimonial-item app__flex">
-            <img src="" alt="" />
-            <div className="app__testimonial-content">
-              <p className="p-text">{testimonials[currentIndex].feedback}</p>
-              <div>
-                <h4 className="bold-text">{testimonials[currentIndex].name}</h4>
-                <h5 className="p-text">{testimonials[currentIndex].company}</h5>
+    <div className='h-fit w-full m-auto py-16 px-4 relative group'>
+       <h2 className="head-text mb-20">
+        What our Client <span>Says</span>
+      </h2>
+      <div className='w-full h-full rounded-2xl bg-center bg-cover duration-500'>
+        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+          <div className="md:flex">
+            <div className="md:flex-shrink-0">
+              <img className="h-48 w-full object-cover md:w-48" src={reviews[currentIndex]?.avatar} alt="Client Avatar" />
+            </div>
+            <div className="p-8">
+              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{reviews[currentIndex]?.clientName}</div>
+              <p className="mt-2 text-gray-500">{reviews[currentIndex]?.content}</p>
+              <div className="mt-4 flex items-center">
+                {Array.from({ length: reviews[currentIndex]?.rating || 5 }, (_, index) => (
+                  <svg key={index} className={`h-6 w-6 fill-current text-yellow-500 ${index >= reviews[currentIndex]?.rating ? 'text-gray-300' : ''}`} viewBox="0 0 20 20">
+                    <path d="M10 1l2.87 5.76 6.42.93-4.65 4.53 1.1 6.41L10 15.4l-5.75 3.04 1.1-6.41-4.65-4.53 6.42-.93L10 1z" />
+                  </svg>
+                ))}
               </div>
             </div>
           </div>
-
-          <div className="app__testimonial-btns app__flex">
-            <div className="app__flex" onClick={() => handleClick(currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1)}>
-              <HiChevronLeft />
-            </div>
-
-            <div className="app__flex" onClick={() => handleClick(currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1)}>
-              <HiChevronRight />
-            </div>
-          </div>
-        </>
-      )}
-
-      {/* <div className="app__testimonial-brands app__flex">
-        {brands.map((brand) => (
-          <motion.div
-            whileInView={{ opacity: [0, 1] }}
-            transition={{ duration: 0.5, type: 'tween' }}
-            key={brand._id}
-          >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
-          </motion.div>
-        ))}
-      </div> */}
-    </>
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
-export default AppWrap(
-  MotionWrap(Testimonial, 'app__testimonial'),
-  'testimonial',
-  'app__primarybg',
-);
+export default App;
