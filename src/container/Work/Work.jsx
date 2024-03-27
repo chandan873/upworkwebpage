@@ -1,131 +1,133 @@
-import React, { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
-import { motion } from 'framer-motion';
+import React from "react";
+import "./Work.css";
+import trumatch from "../../assets/trumath.png";
+import filmore from "../../assets/filmore.png";
+import fairphone from "../../assets/fairphone.png";
+import ticketswap from "../../assets/ticketswap.png";
+import zivver from "../../assets/zivver.png";
 
-import { AppWrap, MotionWrap } from '../../Wrapper';
-
-import './Work.css';
-
-const WorkData=[
-  {
-    id:1,
-    titile:"song app",
-    img:'https://images.unsplash.com/photo-1519619091416-f5d7e5200702?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80',
-    dsc:"song app",
-    tags:"Web App",
-    projectLink:"https://lyriks-song.netlify.app",
-    githubLink:"https://github.com/chandan873/song_app.git"
-  },
-  {
-    id:2,
-    titile:"dashboard ui",
-    img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
-    dsc:"dashboard ui",
-    tags:"Web App",
-    projectLink:"https://dsahboard-ui-react.netlify.app",
-    githubLink:"https://github.com/chandan873/dashboard.git"
-  }
-]
 
 const Work = () => {
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-
-  useEffect(() => {
-    // Set filterWork with all items initially
-    setFilterWork(WorkData);
-  }, []);
-
-  const handleWorkFilter = (item) => {
-    setActiveFilter(item);
-    setAnimateCard([{ y: 100, opacity: 0 }]);
-
-    setTimeout(() => {
-      setAnimateCard([{ y: 0, opacity: 1 }]);
-
-      if (item === 'All') {
-        setFilterWork(WorkData);
-      } else {
-        setFilterWork(WorkData.filter((work) => work.tags.includes(item)));
-      }
-    }, 500);
-  };
   return (
-    <>
-      <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
+    <div className="pt-20">
+      <h2 className="head-text">
+        Our Creative <span>Portfolio</span>
+      </h2>
 
-      <div className="app__work-filter">
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
-          <div
-            key={index}
-            onClick={() => handleWorkFilter(item)}
-            className={`app__work-filter-item app__flex p-text ${activeFilter === item ? 'item-active' : ''}`}
-          >
-            {item}
-          </div>
-        ))}
-      </div>
-
-      <motion.div
-        animate={animateCard}
-        transition={{ duration: 0.5, delayChildren: 0.5 }}
-        className="app__work-portfolio"
-      >
-        {filterWork.map((WorkData, index) => (
-          <div className="app__work-item app__flex" key={index}>
-            <div
-              className="app__work-img app__flex"
+      <div className="portfolio min-h-screen w-full mt-10">
+        {/* card 1 */}
+        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-orange-500 to-white">
+          <div className="portfolio_card_content md:w-1/2 order-2 md:order-1">
+            <h1 className="text-4xl uppercase font-bold text-white dark:text-white mb-4 md:mb-6">
+              TRUMATH
+            </h1>
+            <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
+              TruMath is a Hybrid Mobile Application for EduTech Industry with
+              10,000+ active users and scaling up quickly. This eLearning
+              solution has been designed especially for the secondary and higher
+              secondary students providing them training on mathematics tactics
+              for IIT JEE exams. The user-friendly UI of the app allows its
+              users to learn remotely and get access to online video lectures,
+              participate in Quiz and Olympiads, share video tutorials. This app
+              simplifies the process of uploading video lectures, assessing
+              students, skill monitoring for admin.
+            </p>
+            <button
+              type="button"
+              className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
             >
-              <img src={WorkData.img} alt={WorkData.titile} />
-
-              <motion.div
-                whileHover={{ opacity: [0, 1] }}
-                transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                className="app__work-hover app__flex"
-              >
-                <a href={WorkData.projectLink} target="_blank" rel="noreferrer">
-
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.90] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillEye />
-                  </motion.div>
-                </a>
-                <a href={WorkData.githubLink} target="_blank" rel="noreferrer">
-                  <motion.div
-                    whileInView={{ scale: [0, 1] }}
-                    whileHover={{ scale: [1, 0.90] }}
-                    transition={{ duration: 0.25 }}
-                    className="app__flex"
-                  >
-                    <AiFillGithub />
-                  </motion.div>
-                </a>
-              </motion.div>
-            </div>
-
-            <div className="app__work-content app__flex">
-              <h4 className="bold-text">{works.titile}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}></p>
-
-              <div className="app__work-tag app__flex">
-                <p className="p-text">{WorkData.dsc}</p>
-              </div>
-            </div>
+              View Site
+            </button>
           </div>
-        ))}
-      </motion.div>
-    </>
+          <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
+            <img className="w-full h-auto" src={trumatch} alt="" />
+          </div>
+        </div>
+        {/* card 2 */}
+
+        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-indigo-700 to-white">
+          <div className="portfolio_card_content md:w-1/2 order-2 md:order-1">
+            <h1 className="text-4xl font-bold uppercase text-white dark:text-white mb-4 md:mb-6">
+              Finadore
+            </h1>
+            <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
+            A platform for trade of mutual funds, with a focus on delightful user experience. It is a digital market where users can sell and buy SIP's. This platform acts as an intermediary between the customer and financial advisory services. The platform was created keeping in mind the need for speed, safety and reliability. It offers features like detailed history analysis of the most profitable funds and a SIP calculator as per market trends. It has simplified the process of investing online as well as offline in equity and debt funds as per short and long term requirements.
+            </p>
+            <button
+              type="button"
+              className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
+            >
+              View Site
+            </button>
+          </div>
+          <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
+            <img className="w-full h-auto" src={filmore} alt="" />
+          </div>
+        </div>
+
+        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-green-700 to-white">
+          <div className="portfolio_card_content md:w-1/2 order-2 md:order-1">
+            <h1 className="text-4xl font-bold uppercase text-white dark:text-white mb-4 md:mb-6">
+            TicketSwap
+            </h1>
+            <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
+            TicketSwap is a secure, convenient, and fair marketplace for purchasing and selling electronic tickets for concerts, festivals, and sporting events.            </p>
+            <button
+              type="button"
+              className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
+            ><a href="https://www.ticketswap.com/" target="_blank">
+              View Site
+              </a>
+            </button>
+          </div>
+          <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
+            <img className="w-full h-auto" src={ticketswap} alt="" />
+          </div>
+        </div>
+
+        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-yellow-700 to-white">
+          <div className="portfolio_card_content md:w-1/2 order-2 md:order-1">
+            <h1 className="text-4xl font-bold uppercase text-white dark:text-white mb-4 md:mb-6">
+            Zivver
+            </h1>
+            <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
+            Zivver is a communication security solution that prevents data leaks in the exchange of sensitive data. </p>
+            <button
+              type="button"
+              className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
+            ><a href="https://www.zivver.com/" target="_blank">
+              View Site
+              </a>
+            </button>
+          </div>
+          <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
+            <img className="w-full h-auto" src={zivver} alt="" />
+          </div>
+        </div>
+
+        <div className="portfolio_card flex flex-col md:flex-row items-center p-10 my-10 bg-gradient-to-r from-red-700 to-white">
+          <div className="portfolio_card_content md:w-1/2 order-2 md:order-1">
+            <h1 className="text-4xl font-bold uppercase text-white dark:text-white mb-4 md:mb-6">
+            Fairphone
+            </h1>
+            <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
+            Fairphone is the world's first smartphone that is fairly designed and manufactured. </p>
+            <button
+              type="button"
+              className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
+            ><a href="https://www.fairphone.com/" target="_blank">
+              View Site
+              </a>
+            </button>
+          </div>
+          <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
+            <img className="w-full h-auto" src={fairphone} alt="" />
+          </div>
+        </div>
+        
+      </div>
+    </div>
   );
 };
 
-export default AppWrap(
-  MotionWrap(Work, 'app__works'),
-  'portfolio',
-  'app__primarybg',
-);
+export default Work;

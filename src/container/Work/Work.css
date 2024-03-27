@@ -151,3 +151,22 @@
   background-color: #fff;
   top: -25px;
 }
+.portfolio{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.portfolio_card{
+  width: 60%;
+  min-height: 70vh;
+  border-radius: 15px;
+  
+}
+
+button{
+  border:1px solid #FFA726;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+button:hover{
+  transform: scale(1.1);
+}

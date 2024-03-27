@@ -53,7 +53,7 @@ const Header = () => (
     <div className='card_main'>
 
       <div className='card_main_left '>
-        <h3 className='font-bold' >Crafting Digital Products</h3>
+        <h3 className='text-lg' >Crafting Digital Products</h3>
         <motion.div
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView}
@@ -63,9 +63,9 @@ const Header = () => (
    <div className='grid-container'>
         {card.map((e)=>{
        return (
-       <div className='card_box'>
-            <h3>{e.data}</h3>
-            <p>{e.desc}</p>
+       <div className='card_box flex flex-col justify-between items-center p-5'>
+            <h3 className='text-2xl font-bold'>{e.data}</h3>
+            <p className='text-xs'>{e.desc}</p>
           </div>
      );})}
           
@@ -74,14 +74,14 @@ const Header = () => (
         
       </div>
       <div className='card_main_right'>
-        <h3 className='font-bold'>Advocating Agile Methods</h3>
+        <h3 className='text-lg'>Advocating Agile Methods</h3>
         <motion.div
       variants={scaleVariants}
       whileInView={scaleVariants.whileInView}
       className=""
     >
       
-       <img src="https://www.walkweltech.com/assets/images/process-image.png" alt="" />
+       <img className='why_img' src="https://www.walkweltech.com/assets/images/process-image.png" alt="" />
    
     </motion.div>
       

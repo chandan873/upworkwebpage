@@ -1,39 +1,36 @@
 import React from "react";
-import {
-  About,
-  Footer,
-  Header,
-  Skills,
-  Testimonial,
-  Work,
-  Whyus,
-  Mainfooter,
-} from "./container";
+import { About, Footer, Header, Work, Whyus, Mainfooter,Testimonial } from "./container";
 import { Navbar } from "./components";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Blog from "./container/Blog/Blog";
-import { useLocation } from "react-router-dom";
 
 import "./App.css";
-const App = () => {
-  const currentLocation = useLocation();
 
+const App = () => {
   return (
     <>
-      
       <div className="app">
+        {/* Conditionally render the Navbar component based on the route */}
+
         <Navbar />
-        {currentLocation.pathname !== "/blog" && (
-          <>
-            <Header />
-            <Whyus />
-            <About />
-            <Work />
-            <Footer />
-            <Mainfooter />
-          </>
-        )}
-        {currentLocation.pathname === "/blog" && <Blog />}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                
+                <Header />
+                <Whyus />
+                <About />
+               <Testimonial/>
+              </>
+            }
+          />
+          {/* Disable Navbar component for /portfolio route */}
+          <Route path="/portfolio" element={<Work />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Footer />}/>
+        </Routes> <Mainfooter />
       </div>
     </>
   );
