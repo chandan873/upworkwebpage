@@ -50,6 +50,6 @@ Our mission is to provide unparalleled software solution services that enable ou
 
 export default AppWrap(
   MotionWrap(Testimonial, 'app__testimonial'),
-  'about',
+  'testimonial',
   'app__primarybg',
 );
