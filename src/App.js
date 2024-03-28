@@ -3,6 +3,7 @@ import { About, Footer, Header, Work, Whyus, Mainfooter,Testimonial } from "./co
 import { Navbar } from "./components";
 import { Route, Routes, Navigate } from "react-router-dom";
 import Blog from "./container/Blog/Blog";
+import Clients from './container/Clients/Clients'
 
 import "./App.css";
 
@@ -23,6 +24,7 @@ const App = () => {
                 <Whyus />
                 <About />
                <Testimonial/>
+               <Clients/>
               </>
             }
           />
