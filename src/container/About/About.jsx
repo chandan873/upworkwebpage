@@ -127,21 +127,21 @@ const About = () => {
 
       <Dialog
         maxWidth="md"
-        className={"dialog_box"}
+        className={"dialog_box "}
         open={open}
         onClose={closeModal}
       >
-        <div className="dialog_title flex justify-between flex-row">
-          <DialogTitle className="col-12">{selectedTitle?.title}</DialogTitle>
-          <Button onClick={closeModal}>
-            <i className="fa-solid fa-xmark text-2xl text-white hover:text-red-700"></i>
-          </Button>
+        <div className="dialog_title flex justify-between flex-row  bg-indigo-500">
+          <DialogTitle className="col-12 text-white">{selectedTitle?.title}</DialogTitle>
+        
+            <i onClick={closeModal} className="fa-solid fa-xmark text-2xl text-white hover:text-red-700 m-3"></i>
+          
         </div>
 
         <DialogContent
           className={`flex ${
             below720px ? "flex-col" : "flex-row"
-          } items-center`}
+          } items-center rounded-3xl`}
         >
           <div className="left_content">
             <img

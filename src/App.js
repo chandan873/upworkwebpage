@@ -30,7 +30,7 @@ const App = () => {
           />
           {/* Disable Navbar component for /portfolio route */}
           <Route path="/portfolio" element={<Work />} />
-          <Route path="/blog" element={<Blog />} />
+          {/* <Route path="/blog" element={<Blog />} /> */}
           <Route path="/contact" element={<Footer />}/>
         </Routes> <Mainfooter />
       </div>

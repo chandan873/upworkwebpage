@@ -22,7 +22,7 @@ const Navbar = () => {
           ))}
           <li className="app__flex p-text"><a href="/portfolio">Portfolio</a></li>
           <li className="app__flex p-text"><a href="/contact">Contact Us</a></li>
-          <li className="app__flex p-text"><a href="/blog">Blog</a></li>
+          {/* <li className="app__flex p-text"><a href="/blog">Blog</a></li> */}
         </ul>
       )}
 
@@ -46,7 +46,7 @@ const Navbar = () => {
               <li className="app__flex p-text">
               <li className="app__flex p-text"><a href="/portfolio">Portfolio</a></li>
           <li className="app__flex p-text"><a href="/contact">Contact Us</a></li>
-          <li className="app__flex p-text"><a href="/blog">Blog</a></li>
+          {/* <li className="app__flex p-text"><a href="/blog">Blog</a></li> */}
               </li>
             </ul>
           </motion.div>
