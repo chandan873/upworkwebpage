@@ -81,7 +81,7 @@ const Header = () => (
       className=""
     >
       
-       <img className='why_img' src="https://www.walkweltech.com/assets/images/process-image.png" alt="" />
+       <img className='why_img' src="https://www.walkweltech.com/assets/images/process-image.png" alt="Why Choose Us" />
    
     </motion.div>
       
