@@ -40,7 +40,7 @@ const Work = () => {
             </button>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
-            <img className="w-full h-auto" src={trumatch} alt="" />
+            <img className="w-full h-auto" src={trumatch} alt="TruMath" />
           </div>
         </div>
         {/* card 2 */}
@@ -61,7 +61,7 @@ const Work = () => {
             </button>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
-            <img className="w-full h-auto" src={filmore} alt="" />
+            <img className="w-full h-auto" src={filmore} alt="Finadore" />
           </div>
         </div>
 
@@ -81,7 +81,7 @@ const Work = () => {
             </button>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
-            <img className="w-full h-auto ml-5" src={ticketswap} alt="" />
+            <img className="w-full h-auto ml-5" src={ticketswap} alt="TicketSwap" />
           </div>
         </div>
 
@@ -101,7 +101,7 @@ const Work = () => {
             </button>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
-            <img className="w-full h-auto ml-5" src={zivver} alt="" />
+            <img className="w-full h-auto ml-5" src={zivver} alt="Zivver" />
           </div>
         </div>
 
@@ -121,7 +121,7 @@ const Work = () => {
             </button>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
-            <img className="w-full h-auto ml-5" src={fairphone} alt="" />
+            <img className="w-full h-auto ml-5" src={fairphone} alt="Fairphone" />
           </div>
         </div>
         
