@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { motion } from "framer-motion";
+import IMG from '../../assets/about05.png'
 
 import { AppWrap, MotionWrap } from "../../Wrapper";
 import { urlFor, client } from "../../client";
@@ -12,8 +13,11 @@ const Testimonial = () => {
       <h1 id="about" className="head-text mb-20">
         About us
       </h1>
-      <div className="app__testimonial-item app__flex">
-        <div className="app__testimonial-content">
+      <div className="about-main app__testimonial-item app__flex w-full">
+        <div className="img w-full">
+          <img src={IMG} alt="" className="" />
+        </div>
+        <div className=" w-full">
           <div>
             At Inventive Nexus, we're passionate about leveraging technology to
             empower businesses and individuals alike. With a relentless focus on

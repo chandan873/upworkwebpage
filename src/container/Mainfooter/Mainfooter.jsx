@@ -3,7 +3,7 @@ import React from 'react'
 const Mainfooter = () => {
   return (
 
-<footer class="bg-white dark:bg-gray-900 mt-14">
+
 
 <footer
   class="bg-neutral-100 text-center text-gray-500 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
@@ -154,7 +154,6 @@ const Mainfooter = () => {
 
 </footer>
 
-</footer>
 
   )
 }
