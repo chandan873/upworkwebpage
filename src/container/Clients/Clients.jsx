@@ -15,9 +15,63 @@ const App = () => {
         }));
 
         const reviewResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
-        const reviewData = await reviewResponse.json();
+        // const reviewData = await reviewResponse.json();
+
+        const reviewData =  [
+          {
+            "id": 1,
+            "title": "Highly Recommend!",
+            "body": "This software solution exceeded my expectations! It's powerful, easy to use, and has streamlined our processes. I highly recommend it to anyone looking for a reliable solution."
+          },
+          {
+            "id": 2,
+            "title": "Excellent Product",
+            "body": "We've been using this software for our business, and it has been nothing short of excellent. The features are robust, the interface is intuitive, and it has greatly improved our efficiency."
+          },
+          {
+            "id": 3,
+            "title": "Fantastic Support",
+            "body": "I had a question about a specific feature, and the support team was incredibly helpful. They responded promptly and provided clear instructions to resolve my issue. Fantastic support service!"
+          },
+          {
+            "id": 4,
+            "title": "Game Changer",
+            "body": "This software solution has been a game changer for our company. It has helped us automate tasks, increase productivity, and stay organized. We're thrilled with the results!"
+          },
+          {
+            "id": 5,
+            "title": "Impressive Performance",
+            "body": "The performance of this software is truly impressive. It handles large datasets with ease and runs smoothly without any hiccups. We're impressed with its reliability and speed."
+          },
+          {
+            "id": 6,
+            "title": "User-Friendly Interface",
+            "body": "Even for someone like me who isn't very tech-savvy, this software's interface is incredibly user-friendly. It's intuitive and well-designed, making it a pleasure to use."
+          },
+          {
+            "id": 7,
+            "title": "Saves Time and Effort",
+            "body": "Using this software has saved us a significant amount of time and effort. Tasks that used to take hours can now be completed in minutes, thanks to its automation features. It's been a lifesaver!"
+          },
+          {
+            "id": 8,
+            "title": "Great Value for Money",
+            "body": "Considering the features and benefits it offers, this software solution is definitely great value for money. It has helped us improve our efficiency without breaking the bank."
+          },
+          {
+            "id": 9,
+            "title": "Reliable and Stable",
+            "body": "We've been using this software for a while now, and it has proven to be incredibly reliable and stable. We haven't experienced any crashes or downtime, which is essential for our business operations."
+          },
+          {
+            "id": 10,
+            "title": "Flexible and Customizable",
+            "body": "One of the things we love about this software is how flexible and customizable it is. We can tailor it to suit our specific needs and workflows, which has been invaluable for our business."
+          }
+        ]
+        
         const randomReviews = reviewData
-          .filter(review => review.userId % 2 === 0) // Filter reviews by even user IDs to ensure English reviews
+         // .filter(review => review.userId % 2 === 0) // Filter reviews by even user IDs to ensure English reviews
           .map(review => ({
             content: review.body,
             rating: Math.max(Math.floor(Math.random() * 2) + 4, 4) // Generate random rating between 4 and 5

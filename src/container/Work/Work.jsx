@@ -32,12 +32,14 @@ const Work = () => {
               simplifies the process of uploading video lectures, assessing
               students, skill monitoring for admin.
             </p>
+            <a href="https://trumath.in/" target="_blank">
             <button
               type="button"
               className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
             >
               View Site
             </button>
+            </a>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
             <img className="w-full h-auto" src={trumatch} alt="TruMath" />
@@ -53,12 +55,14 @@ const Work = () => {
             <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
             A platform for trade of mutual funds, with a focus on delightful user experience. It is a digital market where users can sell and buy SIP's. This platform acts as an intermediary between the customer and financial advisory services. The platform was created keeping in mind the need for speed, safety and reliability. It offers features like detailed history analysis of the most profitable funds and a SIP calculator as per market trends. It has simplified the process of investing online as well as offline in equity and debt funds as per short and long term requirements.
             </p>
+            <a href="https://www.finadore.com/" target="_blank">
             <button
               type="button"
               className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
             >
               View Site
             </button>
+            </a>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
             <img className="w-full h-auto" src={filmore} alt="Finadore" />
@@ -72,13 +76,14 @@ const Work = () => {
             </h1>
             <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
             TicketSwap is a secure, convenient, and fair marketplace for purchasing and selling electronic tickets for concerts, festivals, and sporting events.            </p>
+            <a href="https://www.ticketswap.com/" target="_blank">
             <button
               type="button"
               className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
-            ><a href="https://www.ticketswap.com/" target="_blank">
+            >
               View Site
-              </a>
             </button>
+            </a>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
             <img className="w-full h-auto ml-5" src={ticketswap} alt="TicketSwap" />
@@ -92,13 +97,14 @@ const Work = () => {
             </h1>
             <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
             Zivver is a communication security solution that prevents data leaks in the exchange of sensitive data. </p>
+            <a href="https://www.zivver.com/" target="_blank">
             <button
               type="button"
               className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
-            ><a href="https://www.zivver.com/" target="_blank">
+            >
               View Site
-              </a>
             </button>
+            </a>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
             <img className="w-full h-auto ml-5" src={zivver} alt="Zivver" />
@@ -112,13 +118,14 @@ const Work = () => {
             </h1>
             <p className="text-xs mb-4 md:mb-6 text-white dark:text-white">
             Fairphone is the world's first smartphone that is fairly designed and manufactured. </p>
+            <a href="https://www.fairphone.com/" target="_blank">
             <button
               type="button"
               className="text-white  font-medium rounded-lg border-white text-sm px-5 py-2.5 text-center"
-            ><a href="https://www.fairphone.com/" target="_blank">
+            >
               View Site
-              </a>
             </button>
+            </a>
           </div>
           <div className="portfolio_card_img md:w-full mb-8 md:mb-0 md:mr-8 md:w-1/2 order-1 md:order-2">
             <img className="w-full h-auto ml-5" src={fairphone} alt="Fairphone" />

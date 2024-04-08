@@ -32,7 +32,7 @@ const AboutData = [
   },
   {
     id: 2,
-    title: "BlockChain Technology",
+    title: "Blockchain Technology",
     headline: "Web solutions integrated with Blockchain Technology",
     speclist: [
       "Blockchain Based Distribution Application Development (DApp)",
