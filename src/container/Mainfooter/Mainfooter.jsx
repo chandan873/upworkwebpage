@@ -1,4 +1,7 @@
 import React from 'react'
+import './Mainfooter.css'
+
+
 
 const Mainfooter = () => {
   return (
@@ -6,7 +9,7 @@ const Mainfooter = () => {
 
 
 <footer
-  class="bg-neutral-100 text-center text-gray-500 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+  class="main_footer bg-neutral-100 text-center text-gray-500 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
 
   
 

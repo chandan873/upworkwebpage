@@ -48,7 +48,7 @@ const App = () => {
   }, [reviews.length]);
 
   return (
-    <div className='h-fit w-full m-auto py-16 px-4 relative group'>
+    <div className='h-fit w-full m-auto py-16 px-4 relative group '>
        <h2 className="head-text mb-20">
         What our Client <span>Says</span>
       </h2>
