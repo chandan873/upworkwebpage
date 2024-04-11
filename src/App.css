@@ -225,10 +225,10 @@
         background-color: var(--secondary-color);
       }
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 600px) {
     .app__navigation,
     .app__social {
-      display: none;
+      display: none !important;
     }
   
     .copyright {
