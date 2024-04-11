@@ -31,7 +31,7 @@ const Header = () => (
       Your premier destination for cutting-edge software solutions! At Inventive Nexus, we specialize in turning your digital dreams into reality. Whether you're envisioning a stunning website or a seamless mobile app, our team of skilled professionals is dedicated to bringing your ideas to life.
       </p>
       <div className="header_button">
-    <a href="#about"> <button type="button" class="text-main  focus:outline-none  border-main font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Learn More</button></a> 
+    <a href="#about"> <button type="button" class="text-indigo-700  focus:outline-none  border-indigo-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Learn More</button></a> 
     
       </div>
     </div>
