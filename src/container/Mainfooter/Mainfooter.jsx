@@ -27,7 +27,7 @@ const Mainfooter = () => {
               <path
                 d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z " />
             </svg>
-           <a href="" className='cursor-pointer hover:text-main'>INVENTIVE NEXUS</a> 
+           <a href="" className='cursor-pointer hover:text-indigo-700'>INVENTIVE NEXUS</a> 
 
           </h6>
           <p>
@@ -149,8 +149,8 @@ const Mainfooter = () => {
   <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
     <span>© 2023 Copyright:</span>
     <a
-      class="font-semibold text-neutral-600 dark:text-neutral-400 pl-5 cursor-pointer hover:text-main"
-      href="https://tw-elements.com/"
+      class="font-semibold text-neutral-600 dark:text-neutral-400 pl-5 cursor-pointer hover:text-indigo-700"
+      href="/"
       >INVENTIVE NEXUS</a
     >
   </div>
