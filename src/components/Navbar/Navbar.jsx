@@ -13,11 +13,11 @@ const Navbar = () => {
       <div className="app__navbar-logo">
         <a href="/"><h3 className='logo cursor-pointer'>INVENTIVE NEXUS</h3></a>    
       </div>
-      {(currentLocation.pathname !== "/portfolio" && currentLocation.pathname !== "/blog" && currentLocation.pathname !== "/contact") && (
+      {(
         <ul className="app__navbar-links">
           {['home', 'why us','services', ].map((item) => (
             <li className="app__flex p-text" key={`link-${item}`}>
-              <a href={`#${item}`}>{item}</a>
+              <a href={`/#${item}`}>{item}</a>
             </li>
           ))}
           <li className="app__flex p-text"><a href="/portfolio">Portfolio</a></li>
